@@ -3,8 +3,7 @@
 ## What I did, step by step
 
 ### 1. Postgres with a volume
-I created a Docker network called `nexus-net` so my containers could find each other by name. Then I started Postgres 15 with a named volume called `pgdata`. My instructor said a volume or a bind mount would both be fine. I chose a named volume because Docker manages it for me and I avoid folder permission problems.
-
+I created a Docker network called `nexus-net` so my containers could find each other by name. Then I started Postgres 15 with a named volume called `pgdata`. 
 ### 2. Nexus connected to Postgres
 I created a volume called `nexus-data` and started the `sonatype/nexus3` container on the same network. I used the `NEXUS_DATASTORE_*` environment variables to point Nexus to my `postgres-db` container instead of its built-in database. I exposed port 8081 for the web page and port 5000 for the Docker registry. I opened port 5000 from the start, because a container's ports can't be changed after it is created.
 
@@ -40,6 +39,3 @@ I logged in with `docker login localhost:5000`, tagged the image as `localhost:5
     scripts/       setup.sh with the commands I used
     docs/          Screenshots of my work
 
-## Note
-
-The passwords in this repo (`nexus123`) are only for my local lab. I would never use them in production.
