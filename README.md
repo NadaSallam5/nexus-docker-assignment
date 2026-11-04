@@ -37,5 +37,5 @@ I logged in with `docker login localhost:5000`, tagged the image as `localhost:5
 
     flask-app/     My Flask app, requirements.txt and Dockerfile
     scripts/       setup.sh with the commands I used
-    docs/          Screenshots of my work
+    
 
